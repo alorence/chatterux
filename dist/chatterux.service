@@ -1,6 +1,6 @@
 [Unit]
 Description=chatterux - keyboard chatter blocker
-Documentation=https://github.com/FreneticLLC/KeyboardChatterBlocker
+Documentation=https://github.com/alorence/chatterux
 
 [Service]
 Type=simple
