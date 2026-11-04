@@ -1,0 +1,15 @@
+[package]
+name = "chatterux"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+anyhow = "1.0.104"
+clap = { version = "4.6.7", features = ["derive"] }
+env_logger = "0.11.11"
+evdev = "0.13.2"
+libc = "0.2.191"
+log = "0.4.34"
+serde = { version = "1.0.229", features = ["derive"] }
+signal-hook = "0.4.5"
+toml = "1.1.8"

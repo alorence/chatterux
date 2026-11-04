@@ -1,0 +1,28 @@
+[Unit]
+Description=chatterux - keyboard chatter blocker
+Documentation=https://github.com/FreneticLLC/KeyboardChatterBlocker
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/chatterux --config /etc/chatterux/config.toml
+ExecReload=/bin/kill -HUP $MAINPID
+Restart=on-failure
+RestartSec=2
+
+# Access restricted to input devices and uinput.
+DeviceAllow=char-input rw
+DeviceAllow=/dev/uinput rw
+DevicePolicy=closed
+ProtectSystem=strict
+ProtectHome=yes
+PrivateTmp=yes
+PrivateNetwork=yes
+NoNewPrivileges=yes
+ProtectKernelTunables=yes
+ProtectControlGroups=yes
+RestrictAddressFamilies=AF_UNIX
+LockPersonality=yes
+MemoryDenyWriteExecute=yes
+
+[Install]
+WantedBy=multi-user.target

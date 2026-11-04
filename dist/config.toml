@@ -1,0 +1,23 @@
+# chatterux configuration — /etc/chatterux/config.toml
+# After editing: sudo systemctl reload chatterux
+
+# A key press is ignored if it occurs less than threshold_ms milliseconds
+# after the previous release of the same key. 0 disables filtering.
+threshold_ms = 50
+
+# Per-key thresholds (evdev names: KEY_A, KEY_SPACE, BTN_LEFT…,
+# or short form: a, space). 0 disables filtering for that key.
+# Available names are listed in /usr/include/linux/input-event-codes.h.
+[keys]
+# KEY_SPACE = 100
+# KEY_BACKSPACE = 0
+
+[devices]
+# Devices to filter: name substring (case-insensitive) or absolute path
+# (preferably /dev/input/by-id/...). Empty = all detected keyboards.
+# See `sudo chatterux --list-devices`.
+include = []
+# Devices never to filter (takes precedence over include).
+exclude = []
+# Also filter mouse buttons (BTN_LEFT, BTN_RIGHT…).
+mice = false
